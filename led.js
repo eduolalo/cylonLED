@@ -11,7 +11,7 @@ Cylon.robot({
         pin: 11
     },
     work: function(item) {
-        every((1).second(),
+        every((.20).second(),
         function() {
             item.led.toggle();
         });
