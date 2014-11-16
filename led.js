@@ -10,10 +10,24 @@ Cylon.robot({
         driver: 'led',
         pin: 11
     },
-    work: function(item) {
-        every((.20).second(),
-        function() {
-            item.led.toggle();
-        });
+    work: function(me) {
+
+        function initMotor() {
+            var speed = 0;
+            me.led.brightness(speed);
+            while(speed < 256) {
+                me.led.brightness(speed);
+                var i = 0;
+
+                while(i < 1000) {
+                    i++;
+                }
+
+                spedd++;
+
+            }
+        }
+
+        every((10).second(), initMotor());
     }
 }).start();
