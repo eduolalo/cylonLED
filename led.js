@@ -18,12 +18,11 @@ Cylon.robot({
             while(speed < 256) {
                 me.led.brightness(speed);
                 var i = 0;
-                while(i < 100) {
+                while(i < 10000) {
                     i++;
                 }
                 speed++;
-                var apagado = me.led.turnOff();
-                console.log(apagado);
+                me.led.turnOff();
             }
         }
 
