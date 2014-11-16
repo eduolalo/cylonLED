@@ -28,8 +28,10 @@ Cylon.robot({
             }
         }
 
-        every((10).second(), initMotor());
-        me.led.turnOff();
+        every((10).second(), function() {
+            me.led.turnOff();
+            initMotor();
+        });
 
     }
 }).start();
