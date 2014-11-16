@@ -10,7 +10,7 @@ Cylon.robot({
         driver: 'led',
         pin: 11
     },
-    work: function(me) {
+    work: function(my) {
         return every(1..second(), function() {
             return my.led.toggle();
         });
