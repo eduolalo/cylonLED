@@ -19,7 +19,7 @@ Cylon.robot({
                 me.led.brightness(speed);
                 var i = 0;
 
-                while(i < 1000) {
+                while(i < 100000) {
                     i++;
                 }
 
