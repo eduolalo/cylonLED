@@ -23,7 +23,7 @@ Cylon.robot({
                     i++;
                 }
 
-                spedd++;
+                speed++;
 
             }
         }
