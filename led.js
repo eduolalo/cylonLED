@@ -11,7 +11,7 @@ Cylon.robot({
         pin: 11
     },
     work: function(me) {
-
+        var times = 0;
         function initMotor() {
             var speed = 0;
             me.led.brightness(speed);
@@ -19,7 +19,7 @@ Cylon.robot({
                 me.led.brightness(speed);
                 var i = 0;
 
-                while(i < 100000) {
+                while(i < 100000000000) {
                     i++;
                 }
 
@@ -28,10 +28,17 @@ Cylon.robot({
             }
         }
 
-        every((10).second(), function() {
-            me.led.turnOff();
-            initMotor();
-        });
+        var motorInterval = setInterval(function() {
+            if (times === 3) {
+                clearInterval(motorInterval);
+                me.led.turnOff();
+                return;
+            } else {
+                me.led.turnOff();
+                initMotor();
+                times++;
+            }
+        }, (10).seconds());
 
     }
 }).start();
