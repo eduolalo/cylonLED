@@ -12,6 +12,7 @@ Cylon.robot({
     },
     work: function(me) {
         var times = 0;
+        me.led.turnOff();
         function initMotor() {
             var speed = 0;
             me.led.brightness(speed);
@@ -29,7 +30,6 @@ Cylon.robot({
             if (times === 3) {
                 clearInterval(motorInterval);
                 me.led.turnOff();
-                return;
             } else {
                 initMotor();
                 times++;
