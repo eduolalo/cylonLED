@@ -22,7 +22,6 @@ Cylon.robot({
                     i++;
                 }
                 speed++;
-                me.led.turnOff();
             }
         }
 
@@ -32,7 +31,6 @@ Cylon.robot({
                 me.led.turnOff();
                 return;
             } else {
-                me.led.turnOff();
                 initMotor();
                 times++;
             }
