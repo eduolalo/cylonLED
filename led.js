@@ -27,6 +27,7 @@ Cylon.robot({
         }
 
         var motorInterval = setInterval(function() {
+            console.log('Time: ',times);
             if (times === 3) {
                 clearInterval(motorInterval);
                 me.led.turnOff();
