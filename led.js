@@ -29,5 +29,7 @@ Cylon.robot({
         }
 
         every((10).second(), initMotor());
+        me.led.turnOff();
+
     }
 }).start();
